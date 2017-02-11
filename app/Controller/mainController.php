@@ -14,20 +14,22 @@ class mainController extends Controller
      */
     function __construct($loader)
     {
-        $this->init();
+        $this->index();
     }
 
     /**
-     * @param $loader object autoloader
+     *  Default page
      */
-    function init()
+    function index()
     {
-        $db = new DB();
+        $db = DB::getInstance();
+
         $args = [
             'name' => 'vasya',
             'age' => 28,
             'config' => [
-                'sidebar' => 'left'
+                'sidebar' => 'left',
+                'content_layout' => 'custom/register_content'
             ]
         ];
         $this->render( $args );

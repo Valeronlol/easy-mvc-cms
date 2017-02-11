@@ -1,6 +1,6 @@
 <div class="cont_wrap <?php echo 'has-sidebar-' . $side;?>">
     <div class="col-lg-12 text-center">
-        <h2>Login form</h2>
+        <h2>Registration form</h2>
         <hr class="star-primary">
     </div>
 

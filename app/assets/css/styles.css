@@ -1,0 +1,41 @@
+.footer-works li{
+    list-style: none;
+    font-size: 20px;
+}
+.footer-works li a {
+    color: #ffffff;
+}
+
+.footer-works a, .footer-works a.active, .footer-works a:active, .footer-works a:focus, .footer-works a:hover {
+    color: #18BC9C;
+    outline: 0;
+}
+
+footer .footer-works {
+    padding: 0;
+}
+
+header.navbar {
+    height: 120px;
+    opacity: .75;
+}
+
+section.container {
+    margin-top: 120px;
+}
+
+.form-group input, .form-group textarea {
+    text-align: center;
+}
+
+aside.left {
+    width: 30%;
+    float: left;
+    height: 1000px;
+    background: #eee;
+}
+
+section .has-sidebar-left {
+    width: 70%;
+    float: left;
+}

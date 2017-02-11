@@ -10,7 +10,6 @@ use App\View\View;
 class Controller
 {
     function render( $args = [] ){
-
         $view = new View();
         $view->render( $args );
     }

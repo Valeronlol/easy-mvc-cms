@@ -7,20 +7,36 @@ namespace App\View;
 class View
 {
     /**
-     * @param $template
-     * @param array $args
-     * @return string
+     * @param array $args layout configuration,
+     * you can chose between 'left' and 'right' sidebar position, by default is false
+     *
+     * Also you can chose content_layout, by default 'content.php'
      */
     function render( $args = [] ) {
 
-        //default sidebar is OFF
-        $config['sidebar'] = false;
-        extract($args);
+        extract( $this->setDefaultsLayout($args) );
 
         ob_start();
         require 'templates/page.php';
         $str = ob_get_contents();
         ob_end_clean();
         echo $str;
+    }
+
+    /**
+     * Set default params to layout
+     *
+     * @param $args array
+     * @return array
+     */
+    protected function setDefaultsLayout($args) {
+
+        if ( !isset($args['config']['sidebar']) )
+            $args['config']['sidebar'] = false;
+
+        if ( !isset($args['config']['content_layout']) )
+            $args['config']['content_layout'] = 'content';
+
+        return $args;
     }
 }
