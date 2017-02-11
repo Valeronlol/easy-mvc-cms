@@ -1,0 +1,19 @@
+{
+    "name": "root/test.loc",
+    "description": "test project",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Valeron",
+            "email": "valerii.kuzivanov@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload": {
+      "psr-4": {
+        "App\\": "app/"
+      }
+    }
+}
