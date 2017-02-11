@@ -1,10 +1,8 @@
 <?php
+namespace App\Model;
 
 /**
- * Created by PhpStorm.
- * User: valeron
- * Date: 2/11/17
- * Time: 12:26 PM
+ * Database class
  */
 class DB
 {

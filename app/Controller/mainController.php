@@ -1,15 +1,39 @@
 <?php
 namespace App\Controller;
 
+use App\Model\DB;
+
 /**
- * Created by PhpStorm.
- * User: valeron
- * Date: 2/11/17
- * Time: 12:25 PM
+ * Application main controller
  */
-class mainController
+class mainController extends Controller
 {
-    function test(){
-        echo 'MainCont';
+    /**
+     * mainController constructor.
+     * @param $loader object autoloader
+     */
+    function __construct($loader)
+    {
+        $this->init();
     }
+
+    /**
+     * @param $loader object autoloader
+     */
+    function init()
+    {
+        $db = new DB();
+        $args = [
+            'name' => 'vasya',
+            'age' => 28,
+            'config' => [
+                'sidebar' => 'left'
+            ]
+        ];
+        $this->render( $args );
+
+
+    }
+
+
 }

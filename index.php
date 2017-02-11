@@ -5,20 +5,21 @@
  * @author Valeron
  */
 
-$DEV_MODE = true; // Developer mode true/false, turn off on production
+/**
+ * Composer autoloading activation
+ */
+$loader = require_once __DIR__ . '/vendor/autoload.php';
 
 /**
  * Dev mode activation
  */
-if ($DEV_MODE) {
+if (DEV_MODE) {
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
 }
 
 /**
- * Composer autoloading enabling
+ * Initialization application
  */
-require_once __DIR__ . '/vendor/autoload.php';
+$app = new App\Controller\mainController($loader);
 
-$app = new App\Controller\mainController;
-$app->test();
