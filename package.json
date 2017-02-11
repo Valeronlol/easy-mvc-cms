@@ -1,0 +1,22 @@
+{
+  "name": "test_php",
+  "version": "1.0.0",
+  "description": "test php proj",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Valeronlol/test.git"
+  },
+  "author": "Valeron",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Valeronlol/test/issues"
+  },
+  "homepage": "https://github.com/Valeronlol/test#readme",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1"
+  }
+}
