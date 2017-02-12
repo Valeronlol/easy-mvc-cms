@@ -28,11 +28,13 @@ class mainController extends Controller
             'name' => 'vasya',
             'age' => 28,
             'config' => [
-                'sidebar' => 'left',
-                'content_layout' => 'custom/register_content'
+//                'sidebar' => 'left',
+//                'content_layout' => 'custom/register_content'
             ]
         ];
-        $this->render( $args );
+        var_dump($_POST);
+        $this->render();
+
 
 
     }

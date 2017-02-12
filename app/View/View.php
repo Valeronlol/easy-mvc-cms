@@ -8,12 +8,12 @@ class View
 {
     /**
      * @param array $args layout configuration,
-     * you can chose between 'left' and 'right' sidebar position, by default is false
-     *
+     * you can chose between 'left' and 'right' sidebar position,
+     * by default is false.
      * Also you can chose content_layout, by default 'content.php'
      */
-    function render( $args = [] ) {
-
+    function render( $args = [] )
+    {
         extract( $this->setDefaultsLayout($args) );
 
         ob_start();
@@ -24,18 +24,20 @@ class View
     }
 
     /**
-     * Set default params to layout
+     * Set default params to layout.
      *
      * @param $args array
      * @return array
      */
-    protected function setDefaultsLayout($args) {
-
-        if ( !isset($args['config']['sidebar']) )
+    protected function setDefaultsLayout($args)
+    {
+        if ( !isset($args['config']['sidebar']) ){
             $args['config']['sidebar'] = false;
+        }
 
-        if ( !isset($args['config']['content_layout']) )
+        if ( !isset($args['config']['content_layout']) ){
             $args['config']['content_layout'] = 'content';
+        }
 
         return $args;
     }
