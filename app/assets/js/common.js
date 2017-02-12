@@ -1,3 +1,24 @@
 $( document ).ready(function() {
-    console.log( "ready!" );
+
+    /**
+     * frontend form validation
+     */
+    $('#contactForm').on( 'submit', function (e) {
+        var minCount = 6; // min count of symbols
+
+        var form = {
+            login : $(this).find('input[name="login"]').val(),
+            password: $(this).find('input[name="password"]').val()
+        };
+
+        $.each( form, function( key, inputValue ) {
+            if ( inputValue.length < minCount ) {
+                var errorTarget = $('#contactForm').find('input[name="' + key + '"]');
+                var errorBlock = errorTarget.siblings('.help-block').fadeIn();
+                errorBlock.html('').html( 'Count of symbols must be at least ' + minCount );
+                e.preventDefault();
+            }
+        });
+    })
+
 });

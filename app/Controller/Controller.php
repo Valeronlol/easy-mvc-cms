@@ -9,8 +9,27 @@ use App\View\View;
  */
 class Controller
 {
+	/**
+	 * Render some template
+	 *
+	 * @param array $args template configuration
+	 */
     function render( $args = [] ){
         $view = new View();
         $view->render( $args );
     }
+
+	/**
+	 * mainController constructor.
+	 * @param $loader object autoloader
+	 */
+	function __construct($loader)
+	{
+		$this->index();
+	}
+
+	/**
+	 *  Default page
+	 */
+	function index(){}
 }

@@ -5,18 +5,28 @@
     </div>
 
     <div class="col-lg-8 col-lg-offset-2 text-center">
-        <form name="sentMessage" id="contactForm" method="POST">
+        <form name="sentMessage" id="contactForm" method="POST" novalidate>
             <div class="row control-group">
                 <div class="form-group col-xs-12 floating-label-form-group controls">
                     <label for="login">Login</label>
-                    <input type="text" class="form-control" placeholder="Name" id="login" required data-validation-required-message="Please enter your name.">
+                    <input
+                            name="login"
+                            type="text"
+                            class="form-control"
+                            placeholder="Name"
+                            required>
                     <p class="help-block text-danger"></p>
                 </div>
             </div>
             <div class="row control-group">
                 <div class="form-group col-xs-12 floating-label-form-group controls">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" placeholder="Password" id="password" required data-validation-required-message="Please enter your email address.">
+                    <input
+                            name="password"
+                            type="password"
+                            class="form-control"
+                            placeholder="Password"
+                            required>
                     <p class="help-block text-danger"></p>
                 </div>
             </div>

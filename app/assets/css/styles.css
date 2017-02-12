@@ -39,3 +39,7 @@ section .has-sidebar-left {
     width: 70%;
     float: left;
 }
+
+.help-block {
+    color: #a94442;
+}

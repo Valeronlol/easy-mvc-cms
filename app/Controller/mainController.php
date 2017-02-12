@@ -9,15 +9,6 @@ use App\Model\DB;
 class mainController extends Controller
 {
     /**
-     * mainController constructor.
-     * @param $loader object autoloader
-     */
-    function __construct($loader)
-    {
-        $this->index();
-    }
-
-    /**
      *  Default page
      */
     function index()
@@ -35,9 +26,6 @@ class mainController extends Controller
         var_dump($_POST);
         $this->render();
 
-
-
     }
-
 
 }
