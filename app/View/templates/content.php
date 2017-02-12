@@ -5,11 +5,12 @@
     </div>
 
     <div class="col-lg-8 col-lg-offset-2 text-center">
-        <form name="sentMessage" id="contactForm" method="POST" novalidate>
+        <form name="sentMessage" id="contactForm" method="POST">
             <div class="row control-group">
                 <div class="form-group col-xs-12 floating-label-form-group controls">
                     <label for="login">Login</label>
                     <input
+                            minlength="6"
                             name="login"
                             type="text"
                             class="form-control"
@@ -22,6 +23,7 @@
                 <div class="form-group col-xs-12 floating-label-form-group controls">
                     <label for="password">Password</label>
                     <input
+                            minlength="6"
                             name="password"
                             type="password"
                             class="form-control"

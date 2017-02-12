@@ -4,7 +4,8 @@ $( document ).ready(function() {
      * frontend form validation
      */
     $('#contactForm').on( 'submit', function (e) {
-        var minCount = 6; // min count of symbols
+
+        var minCount = 6; // you can chose min count of symbols
 
         var form = {
             login : $(this).find('input[name="login"]').val(),
