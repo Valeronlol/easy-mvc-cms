@@ -39,6 +39,12 @@ class View
             $args['config']['content_layout'] = 'content';
         }
 
+        if ( $args['validation'] === true ){
+            $args['validation'] = [];
+            $args['validation']['password'] = '';
+            $args['validation']['login'] = '';
+        }
+
         return $args;
     }
 }

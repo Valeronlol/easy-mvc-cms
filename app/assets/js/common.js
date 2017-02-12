@@ -20,6 +20,11 @@ $( document ).ready(function() {
                 e.preventDefault();
             }
         });
-    })
+    });
+
+    /**
+     * show password handler
+     */
+    $('#password').hidePassword(true);
 
 });

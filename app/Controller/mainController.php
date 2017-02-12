@@ -1,7 +1,7 @@
 <?php
 namespace App\Controller;
 
-use App\Model\DB;
+use App\Model\Validator;
 
 /**
  * Application main controller
@@ -13,7 +13,7 @@ class mainController extends Controller
      */
     function index()
     {
-        $db = DB::getInstance();
+        $validateResult = Validator::credentialsValidate( $this->getCredentials() );
 
         $args = [
             'name' => 'vasya',
@@ -21,11 +21,34 @@ class mainController extends Controller
             'config' => [
 //                'sidebar' => 'left',
 //                'content_layout' => 'custom/register_content'
-            ]
+            ],
+            'validation' => $validateResult
         ];
-        var_dump($_POST);
-        $this->render();
+        $this->render($args);
 
+    }
+
+    /**
+     * get credentials from $_POST
+     */
+    function getCredentials()
+    {
+        if ( isset($_POST['login']) ){
+            $login = trim($_POST['login']);
+        } else {
+            $login = '';
+        }
+
+        if ( isset($_POST['password']) ){
+            $password = trim($_POST['password']);
+        } else {
+            $password = '';
+        }
+
+        return [
+            'login' => $login,
+            'password' => $password
+        ];
     }
 
 }
