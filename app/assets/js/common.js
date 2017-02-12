@@ -25,6 +25,6 @@ $( document ).ready(function() {
     /**
      * show password handler
      */
-    $('#password').hidePassword(true);
+    $('#password').togglePassword(true);
 
 });

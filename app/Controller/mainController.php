@@ -13,7 +13,11 @@ class mainController extends Controller
      */
     function index()
     {
-        $validateResult = Validator::credentialsValidate( $this->getCredentials() );
+        if ( isset($_POST['submit']) ){
+            $validateResult = Validator::credentialsValidate( $this->getCredentials() );
+        } else {
+            $validateResult = [];
+        }
 
         $args = [
             'name' => 'vasya',

@@ -64,3 +64,7 @@ section .has-sidebar-left {
     color: #555;
     outline: transparent;
 }
+
+#password {
+    padding-right: 0 !important;
+}

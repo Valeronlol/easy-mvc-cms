@@ -43,7 +43,7 @@
             <br>
             <div class="row">
                 <div class="form-group col-xs-12">
-                    <button type="submit" class="btn btn-success btn-lg">Send</button>
+                    <button type="submit" name="submit" class="btn btn-success btn-lg">Send</button>
                 </div>
             </div>
         </form>
