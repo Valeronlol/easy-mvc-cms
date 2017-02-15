@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Model\Validator;
+use App\Model\Auth;
 
 /**
  * Application main controller
@@ -13,11 +14,22 @@ class mainController extends Controller
      */
     function index()
     {
+        $credentials = $this->getCredentials();
+
         if ( isset($_POST['submit']) ){
-            $validateResult = Validator::credentialsValidate( $this->getCredentials() );
+            $validateResult = Validator::credentialsValidate($credentials);
         } else {
             $validateResult = [];
         }
+
+        if ( $validateResult === true ){
+            $auth = new Auth();
+
+            var_dump($auth->checkCredentials($credentials));
+
+        }
+
+        // TODO create norm tables, if valid login and redirect.
 
         $args = [
             'name' => 'vasya',
@@ -29,7 +41,6 @@ class mainController extends Controller
             'validation' => $validateResult
         ];
         $this->render($args);
-
     }
 
     /**

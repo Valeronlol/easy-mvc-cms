@@ -16,7 +16,7 @@ class DB
      *
      * @param string $table table name
      */
-    private function __construct( $table = 'test_table' )
+    private function __construct( $table = USERS_TABLE )
     {
         try {
             $this->pdo = new \PDO( 'mysql:host='. HOST .';dbname='.DB_NAME, DB_USER, DB_PASSWORD );
@@ -69,22 +69,20 @@ class DB
         $this->pdo->setAttribute( \PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION );
         $sql ="CREATE table $table(
              ID INT( 11 ) AUTO_INCREMENT PRIMARY KEY,
-             Prename VARCHAR( 50 ) NOT NULL, 
-             Name VARCHAR( 250 ) NOT NULL,
-             StreetA VARCHAR( 150 ) NOT NULL, 
-             StreetB VARCHAR( 150 ) NOT NULL, 
-             StreetC VARCHAR( 150 ) NOT NULL, 
-             County VARCHAR( 100 ) NOT NULL,
-             Postcode VARCHAR( 50 ) NOT NULL,
-             Country VARCHAR( 50 ) NOT NULL);";
+             user VARCHAR( 50 ) NOT NULL,
+             password VARCHAR( 255 ) NOT NULL, 
+             first_name VARCHAR( 100 ) NOT NULL,
+             last_name VARCHAR( 100 ) NOT NULL,
+             last_login TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP );";
         $this->pdo->exec($sql);
     }
 
-    public function createUser()
-    {
-
+    /**
+     * PDO getter
+     *
+     * @return \PDO instance
+     */
+    function getPdo (){
+        return $this->pdo;
     }
-
-//    TODO Получить данные с форм и записать  в базу и ебануть таблицы обоснованные наахуй с индексацией
-
 }
