@@ -24,12 +24,12 @@ class mainController extends Controller
 
         if ( $validateResult === true ){
             $auth = new Auth();
-
-            var_dump($auth->checkCredentials($credentials));
-
+            if( $auth->checkCredentials($credentials) ){
+                // TODO redirect to admin panel
+            }
         }
 
-        // TODO create norm tables, if valid login and redirect.
+        // TODO create user form and method !!11
 
         $args = [
             'name' => 'vasya',
