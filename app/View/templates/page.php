@@ -1,4 +1,5 @@
 <?php
+if (! defined('ABSPATH')) die('permision denied');
 include_once 'header.php';
 
 ?>

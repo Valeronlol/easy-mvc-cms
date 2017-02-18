@@ -1,6 +1,7 @@
 <?php
 namespace App\Model;
 
+if (! defined('ABSPATH')) die('permision denied');
 /**
  * Database class
  *

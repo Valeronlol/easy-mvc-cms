@@ -1,6 +1,7 @@
 <?php
 namespace App\View;
 
+if (! defined('ABSPATH')) die('permision denied');
 /**
  * View class
  */

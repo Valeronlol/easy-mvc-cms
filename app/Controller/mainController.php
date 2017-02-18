@@ -3,6 +3,9 @@ namespace App\Controller;
 
 use App\Model\Validator;
 use App\Model\Auth;
+use App\Model\Router;
+
+if (! defined('ABSPATH')) die('permision denied');
 
 /**
  * Application main controller
@@ -26,6 +29,7 @@ class mainController extends Controller
             $auth = new Auth();
             if( $auth->checkCredentials($credentials) ){
                 // TODO redirect to admin panel
+//                Router::dispatch( ABSPATH.'app/Controller/mainController' , 'index', ['test' => 'test22']);
             }
         }
 

@@ -1,3 +1,4 @@
+<?php if (! defined('ABSPATH')) die('permision denied');?>
 <!doctype html>
 <html lang="en">
 <head>

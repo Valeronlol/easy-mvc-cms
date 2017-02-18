@@ -2,6 +2,8 @@
 namespace App\Model;
 
 use App\Model\DB;
+
+if (! defined('ABSPATH')) die('permision denied');
 /**
  * Class Auth Base authorization class
  * @package App\Model

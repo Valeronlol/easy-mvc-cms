@@ -1,3 +1,4 @@
+<?php if (! defined('ABSPATH')) die('permision denied');?>
 <div class="cont_wrap <?php echo 'has-sidebar-' . $side;?>">
     <div class="col-lg-12 text-center">
         <h2>Login form</h2>

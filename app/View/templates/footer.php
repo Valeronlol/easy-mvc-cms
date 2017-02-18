@@ -1,3 +1,5 @@
+<?php if (! defined('ABSPATH')) die('permision denied');?>
+
     <footer class="text-center">
         <div class="footer-above">
             <div class="container">

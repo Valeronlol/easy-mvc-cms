@@ -4,6 +4,7 @@ namespace App\Controller;
 use App\Model\DB;
 use App\View\View;
 
+if (! defined('ABSPATH')) die('permision denied');
 /**
  * Class Controller - base application class controllers
  * @package App\Controller
@@ -14,9 +15,8 @@ class Controller
 
     /**
      * mainController constructor.
-     * @param $loader object autoloader
      */
-    function __construct($loader)
+    function __construct()
     {
         $this->db = DB::getInstance();
         $this->index();

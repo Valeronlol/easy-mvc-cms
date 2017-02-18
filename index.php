@@ -5,6 +5,8 @@
  * @author Valeron
  */
 
+define('ABSPATH', dirname(__FILE__) . '/');
+
 /**
  * Composer autoloading activation
  */
@@ -23,3 +25,4 @@ if (DEV_MODE) {
  */
 $app = new App\Controller\mainController($loader);
 
+var_dump($_GET);exit;
