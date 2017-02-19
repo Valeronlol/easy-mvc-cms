@@ -19,7 +19,6 @@ class Controller
     function __construct()
     {
         $this->db = DB::getInstance();
-        $this->index();
     }
 
 	/**
@@ -27,13 +26,9 @@ class Controller
 	 *
 	 * @param array $args template configuration
 	 */
-    function render( $args = [] ){
+    function render( $args = [] )
+    {
         $view = new View();
         $view->render( $args );
     }
-
-	/**
-	 *  Default page
-	 */
-	function index(){}
 }

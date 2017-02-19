@@ -3,7 +3,6 @@ namespace App\Controller;
 
 use App\Model\Validator;
 use App\Model\Auth;
-use App\Model\Router;
 
 if (! defined('ABSPATH')) die('permision denied');
 
@@ -29,7 +28,6 @@ class mainController extends Controller
             $auth = new Auth();
             if( $auth->checkCredentials($credentials) ){
                 // TODO redirect to admin panel
-//                Router::dispatch( ABSPATH.'app/Controller/mainController' , 'index', ['test' => 'test22']);
             }
         }
 
@@ -47,22 +45,23 @@ class mainController extends Controller
         $this->render($args);
     }
 
+    function register ()
+    {
+        echo 'register';
+    }
+
+    function notFound()
+    {
+        echo '404 bro';
+    }
+
     /**
      * get credentials from $_POST
      */
     function getCredentials()
     {
-        if ( isset($_POST['login']) ){
-            $login = trim($_POST['login']);
-        } else {
-            $login = '';
-        }
-
-        if ( isset($_POST['password']) ){
-            $password = trim($_POST['password']);
-        } else {
-            $password = '';
-        }
+        isset($_POST['login']) ? $login = trim($_POST['login']) : $login = '';
+        isset($_POST['password']) ? $password = trim($_POST['password']) : $password = '';
 
         return [
             'login' => $login,

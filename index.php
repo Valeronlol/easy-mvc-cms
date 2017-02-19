@@ -23,6 +23,5 @@ if (DEV_MODE) {
 /**
  * Initialization application
  */
-$app = new App\Controller\mainController($loader);
-
-var_dump($_GET);exit;
+$router = new App\Model\Router();
+$router->run();

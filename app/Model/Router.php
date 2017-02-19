@@ -4,39 +4,36 @@ namespace App\Model;
 
 if (! defined('ABSPATH')) die('permision denied');
 
-class Router
-{
-    public static $routes = array();
-    public static function dispatch($controller,$action,$id)
+/**
+ * Class Router
+ * @package App\Model
+ */
+class Router {
+    
+    private $routes, $route;
+
+    /**
+     * Router constructor.
+     */
+    function __construct()
     {
-        $controller = $controller . '.php';
-        if (file_exists( $controller ))
-        {
-            include_once $controller;
-            $controllerObj = new $controller();
-            $controllerObj->$action($id);
+        $this->routes = ROUTES;
+        $this->route = urldecode( parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH ));
+    }
+
+    /**
+     * Run routing
+     */
+    function run ()
+    {
+        if ( isset( $this->routes[$this->route]) ) {
+            $controller = 'App\\Controller\\' . $this->routes[$this->route]['controller'] . 'Controller';
+            $obj = new $controller();
+            $obj->{$this->routes[$this->route]['action']}();
         } else {
-            die('404');
+            header('Location: /404');
+            exit;
         }
     }
-    public static function addRoute($httpMethod, $path, $controller, $action)
-    {
-        static::$routes[] = array(
-            'httpMethod'		=> $httpMethod,
-            'path'			=> $path,
-            'controller'		=> $controller,
-            'action'		=> $action
-        );
-    }
-    public static function doRoute($httpMethod, $path)
-    {
-        foreach(static::$routes as  $route)
-        {
-            if (preg_match($route['path'], $path, $groups) && $httpMethod == $route['httpMethod'])
-            {
-                static::dispatch($route['controller'],$route['action'], isset($groups[1]) ? $groups[1] : null);
-                break;
-            }
-        }
-    }
+
 }
