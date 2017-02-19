@@ -32,12 +32,6 @@ class loginController extends Controller
         }
 
         $args = [
-            'name' => 'vasya',
-            'age' => 28,
-            'config' => [
-//                'sidebar' => 'left',
-//                'content_layout' => 'custom/register_content'
-            ],
             'validation' => $validateResult
         ];
         $this->render($args);

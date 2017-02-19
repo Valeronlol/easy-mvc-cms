@@ -10,6 +10,7 @@ if (! defined('ABSPATH')) die('permision denied');
 class DB
 {
     private $pdo;
+    private $table;
     private static $instance = null;
 
     /**
@@ -19,6 +20,8 @@ class DB
      */
     private function __construct( $table = USERS_TABLE )
     {
+        $this->table = $table;
+
         try {
             $this->pdo = new \PDO( 'mysql:host='. HOST .';dbname='.DB_NAME, DB_USER, DB_PASSWORD );
         } catch( \PDOException $e ) {
@@ -85,5 +88,22 @@ class DB
      */
     function getPdo (){
         return $this->pdo;
+    }
+
+    /**
+     * Create new user
+     *
+     * @param $credentials array
+     */
+    function createUser($credentials)
+    {
+        $passwordHash = password_hash( $credentials['password'], PASSWORD_DEFAULT );
+
+        $stmt = $this->pdo->prepare("INSERT INTO {$this->table} (user, password, first_name, last_name) VALUES (?, ?, ?, ?)");
+        $stmt->bindParam(1, $credentials['login']);
+        $stmt->bindParam(2, $passwordHash);
+        $stmt->bindParam(3, $credentials['f_name']);
+        $stmt->bindParam(4, $credentials['l_name']);
+        return $stmt->execute();
     }
 }

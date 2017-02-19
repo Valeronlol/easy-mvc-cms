@@ -53,19 +53,4 @@ class Auth
         $credentials = $_SESSION['credentials'];
         return $this->checkCredentials($credentials);
     }
-
-    /**
-     * @param $credentials array
-     */
-    function createUser($credentials)
-    {
-        // TODO допилить нормально
-        $login = $credentials['login'];
-        $password = $credentials['password'];
-        $passwordHash = password_hash( $password, PASSWORD_DEFAULT );
-
-        $this->pdo;
-    }
-
-
 }

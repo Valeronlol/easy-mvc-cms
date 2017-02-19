@@ -44,6 +44,8 @@ class View
             $args['validation'] = [];
             $args['validation']['password'] = '';
             $args['validation']['login'] = '';
+            $args['validation']['l_name'] = '';
+            $args['validation']['r_name'] = '';
         }
 
         return $args;

@@ -17,10 +17,11 @@
                             placeholder="Name"
                             id="login"
                             required
-                            data-validation-required-message="Please enter your login."
-                            aria-invalid="false"
+                            value="<?php if( isset($_POST['login']) ) echo $_POST['login']; ?>"
                     >
-                    <p class="help-block text-danger"></p>
+                    <p class="help-block text-danger">
+                        <?php if( isset($validation['login']) ) echo $validation['login'];?>
+                    </p>
                 </div>
             </div>
             <div class="row control-group">
@@ -33,9 +34,11 @@
                             placeholder="First name"
                             id="f_name"
                             required
-                            data-validation-required-message="Please enter your first name."
+                            value="<?php if( isset($_POST['f_name']) ) echo $_POST['f_name']; ?>"
                     >
-                    <p class="help-block text-danger"></p>
+                    <p class="help-block text-danger">
+                        <?php if( isset($validation['f_name']) ) echo $validation['f_name'];?>
+                    </p>
                 </div>
             </div>
             <div class="row control-group">
@@ -48,9 +51,11 @@
                             placeholder="Last name"
                             id="l_name"
                             required
-                            data-validation-required-message="Please enter your last name."
+                            value="<?php if( isset($_POST['l_name']) ) echo $_POST['l_name']; ?>"
                     >
-                    <p class="help-block text-danger"></p>
+                    <p class="help-block text-danger">
+                        <?php if( isset($validation['l_name']) ) echo $validation['l_name'];?>
+                    </p>
                 </div>
             </div>
             <div class="row control-group">
@@ -63,9 +68,11 @@
                             placeholder="Password"
                             id="password"
                             required
-                            data-validation-required-message="Please enter your password."
+                            value="<?php if( isset($_POST['password']) ) echo $_POST['password']; ?>"
                     >
-                    <p class="help-block text-danger"></p>
+                    <p class="help-block text-danger">
+                        <?php if( isset($validation['password']) ) echo $validation['password'];?>
+                    </p>
                 </div>
             </div>
             <br>

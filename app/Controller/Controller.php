@@ -12,7 +12,7 @@ if (! defined('ABSPATH')) die('permision denied');
  */
 class Controller
 {
-    private $db, $auth;
+    protected $db, $auth;
 
     /**
      * Controller constructor.

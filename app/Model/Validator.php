@@ -17,8 +17,8 @@ class Validator
     {
         $errors = [];
 
-        if ( preg_match("/^[0-9a-zA-Z_]{5,}$/", $credentilas["login"] ) === 0) {
-            $errors['login'] = 'User must be bigger that 5 chars and contain only digits, letters and underscore';
+        if ( preg_match("/^[0-9a-zA-Z_]{6,}$/", $credentilas["login"] ) === 0) {
+            $errors['login'] = 'Login must be bigger that 6 chars and contain only digits, letters and underscore';
         }
 
         if ( preg_match("/^.*(?=.{6,})(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).*$/", $credentilas["password"]) === 0 ) {
