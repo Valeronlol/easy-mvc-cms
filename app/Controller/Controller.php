@@ -3,6 +3,7 @@ namespace App\Controller;
 
 use App\Model\DB;
 use App\View\View;
+use App\Model\Auth;
 
 if (! defined('ABSPATH')) die('permision denied');
 /**
@@ -11,14 +12,15 @@ if (! defined('ABSPATH')) die('permision denied');
  */
 class Controller
 {
-    private $db;
+    private $db, $auth;
 
     /**
-     * mainController constructor.
+     * Controller constructor.
      */
     function __construct()
     {
         $this->db = DB::getInstance();
+        $this->auth = new Auth();
     }
 
 	/**
@@ -30,5 +32,14 @@ class Controller
     {
         $view = new View();
         $view->render( $args );
+    }
+
+    /**
+     * Check is current user authorized
+     * @return boolean
+     */
+    function isAuthorized()
+    {
+        return $this->auth->checkAuthorized();
     }
 }

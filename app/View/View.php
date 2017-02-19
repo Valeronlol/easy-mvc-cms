@@ -40,7 +40,7 @@ class View
             $args['config']['content_layout'] = 'content';
         }
 
-        if ( $args['validation'] === true ){
+        if ( isset($args['validation']) && $args['validation'] === true ){
             $args['validation'] = [];
             $args['validation']['password'] = '';
             $args['validation']['login'] = '';

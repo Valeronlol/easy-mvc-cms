@@ -43,6 +43,20 @@ class Auth
         return false;
     }
 
+    /**
+     * is current user authorized
+     * @return boolean
+     */
+    function checkAuthorized()
+    {
+        session_start();
+        $credentials = $_SESSION['credentials'];
+        return $this->checkCredentials($credentials);
+    }
+
+    /**
+     * @param $credentials array
+     */
     function createUser($credentials)
     {
         // TODO допилить нормально

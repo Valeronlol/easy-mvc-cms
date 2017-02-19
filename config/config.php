@@ -13,8 +13,9 @@ const USERS_TABLE = 'users_table'; // Users tablename
  * Application routes
  */
 const ROUTES = [
-    '/' => ['controller' => 'main', 'action' => 'index'],
-    '/register' => ['controller' => 'main', 'action' => 'register'],
-    '/404' => ['controller' => 'main', 'action' => 'notFound']
+    '/' => ['controller' => 'login', 'action' => 'index'],
+    '/register' => ['controller' => 'register', 'action' => 'index'],
+    '/admin' => ['controller' => 'admin', 'action' => 'index'],
+    '/404' => ['controller' => 'notFound', 'action' => 'index']
 ];
 

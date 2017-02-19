@@ -9,7 +9,7 @@ if (! defined('ABSPATH')) die('permision denied');
 /**
  * Application main controller
  */
-class mainController extends Controller
+class loginController extends Controller
 {
     /**
      *  Default page
@@ -26,12 +26,10 @@ class mainController extends Controller
 
         if ( $validateResult === true ){
             $auth = new Auth();
-            if( $auth->checkCredentials($credentials) ){
-                // TODO redirect to admin panel
+            if ( $auth->checkCredentials($credentials) ){
+                $this->sessionCredentials($credentials);
             }
         }
-
-        // TODO create user form and method !!11
 
         $args = [
             'name' => 'vasya',
@@ -43,16 +41,6 @@ class mainController extends Controller
             'validation' => $validateResult
         ];
         $this->render($args);
-    }
-
-    function register ( $params = [] )
-    {
-        print_r($params);
-    }
-
-    function notFound( $params = [] )
-    {
-        echo '404 bro';
     }
 
     /**
@@ -69,4 +57,16 @@ class mainController extends Controller
         ];
     }
 
+    /**
+     * Write credentials to session and redirect to route
+     *
+     * @param $credentials array
+     */
+    private function sessionCredentials ($credentials)
+    {
+        session_start();
+        $_SESSION['credentials'] = $credentials;
+        header('Location: ' . '/admin');
+        exit;
+    }
 }
