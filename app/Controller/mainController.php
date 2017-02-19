@@ -14,7 +14,7 @@ class mainController extends Controller
     /**
      *  Default page
      */
-    function index()
+    function index( $params = [] )
     {
         $credentials = $this->getCredentials();
 
@@ -45,12 +45,12 @@ class mainController extends Controller
         $this->render($args);
     }
 
-    function register ()
+    function register ( $params = [] )
     {
-        echo 'register';
+        print_r($params);
     }
 
-    function notFound()
+    function notFound( $params = [] )
     {
         echo '404 bro';
     }

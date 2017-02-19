@@ -24,4 +24,4 @@ if (DEV_MODE) {
  * Initialization application
  */
 $router = new App\Model\Router();
-$router->run();
+$router->dispatch();
