@@ -68,3 +68,7 @@ section .has-sidebar-left {
 #password {
     padding-right: 0 !important;
 }
+
+.container {
+    padding-top: 15px;
+}

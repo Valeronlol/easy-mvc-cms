@@ -7,7 +7,7 @@ use App\Model\Auth;
 if (! defined('ABSPATH')) die('permision denied');
 
 /**
- * Application main controller
+ * Application login controller
  */
 class loginController extends Controller
 {

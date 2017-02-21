@@ -2,10 +2,14 @@
 
 namespace App\Controller;
 
+use App\Model\Lang;
+
+if (! defined('ABSPATH')) die('permision denied');
 
 class adminController extends Controller
 {
     /**
+     * index admin action
      * @param array $params
      */
     function index ( $params = [] )
@@ -18,8 +22,14 @@ class adminController extends Controller
         }
     }
 
+    /**
+     * @param $params array
+     */
     function mainAdmin($params)
     {
+//        $this->setLanguage('ru');
+        Lang::_( 'TEST', $this->getLanguage() );
+
         $args = [
             'name' => 'vasya',
             'age' => 28,

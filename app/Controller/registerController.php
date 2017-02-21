@@ -2,8 +2,9 @@
 
 namespace App\Controller;
 
-
 use App\Model\Validator;
+
+if (! defined('ABSPATH')) die('permision denied');
 
 class registerController extends Controller
 {
@@ -16,7 +17,6 @@ class registerController extends Controller
             $this->register();
         }
 
-
         $args = [
             'config' => [
                 'content_layout' => 'custom/register_panel'
@@ -25,6 +25,9 @@ class registerController extends Controller
         $this->render($args);
     }
 
+    /**
+     * New user registration
+     */
     private function register()
     {
         $credentials = [

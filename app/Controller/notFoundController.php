@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+if (! defined('ABSPATH')) die('permision denied');
 
 class notFoundController
 {
