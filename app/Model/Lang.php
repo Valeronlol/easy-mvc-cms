@@ -20,9 +20,8 @@ class Lang
 
         if (!$echo){
             return $ini[$phrase];
-        } else {
-            echo $ini[$phrase];
         }
+        echo $ini[$phrase];
     }
 
     /**
@@ -31,6 +30,6 @@ class Lang
      */
     function getLanguage()
     {
-        return $_COOKIE['lang'];
+        return isset($_COOKIE['lang']) && is_string($_COOKIE['lang']) ? $_COOKIE['lang'] : 'ru';
     }
 }

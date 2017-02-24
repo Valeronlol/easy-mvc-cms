@@ -88,3 +88,7 @@ header .menu_panel li {
     list-style: none;
     display: inline-block;
 }
+
+#my-file-selector {
+    display: none;
+}

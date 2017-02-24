@@ -77,4 +77,11 @@ $( document ).ready(function() {
         location.reload();
     });
 
+    /**
+     * upload button
+     */
+    $('#my-file-selector').on('change', function () {
+        $('#upload-file-info').html($(this).val())
+    });
+
 });
