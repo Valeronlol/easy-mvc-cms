@@ -15,11 +15,6 @@ footer .footer-works {
     padding: 0;
 }
 
-header.navbar {
-    height: 120px;
-    opacity: .75;
-}
-
 section.container {
     margin-top: 120px;
 }
@@ -80,5 +75,16 @@ header {
 header .eng_panel {
     position: absolute;
     right: 10px;
-    top: 5px;
+    top: 8px;
+}
+
+header .menu_panel{
+    position: absolute;
+    left: 10px;
+    top: 8px;
+}
+
+header .menu_panel li {
+    list-style: none;
+    display: inline-block;
 }

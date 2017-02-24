@@ -1,10 +1,23 @@
 $( document ).ready(function() {
 
     /**
+     * Translation
+     */
+    var errorMessage = '';
+
+    switch($.cookie("lang")) {
+        case 'ru':
+            errorMessage = 'Колличество символов должно быть больше ';
+            break;
+        case 'en':
+            errorMessage = 'Count of symbols must be at least ';
+            break;
+    }
+
+    /**
      * frontend form validation
      */
     $('#contactForm').on( 'submit', function (e) {
-
         var minCount = 6; // you can chose min count of symbols
 
         var form = {
@@ -16,7 +29,7 @@ $( document ).ready(function() {
             if ( inputValue.length < minCount ) {
                 var errorTarget = $('#contactForm').find('input[name="' + key + '"]');
                 var errorBlock = errorTarget.siblings('.help-block').fadeIn();
-                errorBlock.html('').html( 'Count of symbols must be at least ' + minCount );
+                errorBlock.html('').html( errorMessage + minCount );
                 e.preventDefault();
             }
         });
@@ -44,7 +57,7 @@ $( document ).ready(function() {
             if ( inputValue.length < minCount ) {
                 var errorTarget = $('#register').find('input[name="' + key + '"]');
                 var errorBlock = errorTarget.parents('.form-group').find('.help-block').fadeIn();
-                errorBlock.html( 'Count of symbols must be at least ' + minCount );
+                errorBlock.html( errorMessage + minCount );
                 e.preventDefault();
             }
         });

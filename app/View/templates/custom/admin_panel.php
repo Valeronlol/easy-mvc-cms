@@ -6,6 +6,6 @@
     </div>
 
     <div class="col-lg-8 col-lg-offset-2 text-center">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto dignissimos, eligendi inventore iure laudantium maiores molestiae recusandae! Aspernatur consectetur debitis dignissimos distinctio eos eum expedita, modi, nam nihil, nostrum sapiente.</p>
+        <p><?php $this->_('lorem');?></p>
     </div>
 </div>

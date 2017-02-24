@@ -14,7 +14,13 @@
 </head>
 <body>
 <header class="navbar navbar-default navbar-fixed-top navbar-custom affix-top">
-    <h3><?php echo SITE_TITLE;?></h3>
+    <div class="menu_panel">
+        <ul>
+            <li><a class="btn btn-primary" href="/"><?php $this->_('Main');?></a></li>
+            <li><a class="btn btn-primary" href="/admin"><?php $this->_('Admin panel');?></a></li>
+            <li><a class="btn btn-primary" href="/register"><?php $this->_('Registration');?></a></li>
+        </ul>
+    </div>
     <div class="eng_panel">
         <button type="button" class="btn btn-info cookie" data-cookie="ru">RU</button>
         <button type="button" class="btn btn-info cookie" data-cookie="en">EN</button>

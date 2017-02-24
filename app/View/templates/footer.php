@@ -5,12 +5,12 @@
             <div class="container">
                 <div class="row">
                     <div class="footer-col col-md-4">
-                        <h3>Контакты</h3>
+                        <h3><?php $this->_('Contacts');?></h3>
                         <p> +996 552 442882
-                            <br>Киргизия, Бишкек, 12 мкр/Политех</p>
+                            <br><?php $this->_('adress');?></p>
                     </div>
                     <div class="footer-col col-md-4">
-                        <h3>Последние работы</h3>
+                        <h3><?php $this->_('Last works');?></h3>
                         <ul class="footer-works">
                             <li><a href="http://kazeco.kg" target="_blank">Kazeco</a></li>
                             <li><a href="vefacenter.kgvefacenter.kg" target="_blank">Vefacenter</a></li>
@@ -18,8 +18,8 @@
                         </ul>
                     </div>
                     <div class="footer-col col-md-4">
-                        <h3>Исходники проекта</h3>
-                        <p>Скачать с  <a href="https://github.com/Valeronlol/test" target="_blank">gitHub</a>.</p>
+                        <h3><?php $this->_('Source code');?></h3>
+                        <p><?php $this->_('Download');?>  <a href="https://github.com/Valeronlol/test" target="_blank">gitHub</a>.</p>
                     </div>
                 </div>
             </div>
@@ -28,7 +28,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        Copyright © Кузиванов Валерий 2017
+                        <?php $this->_('Copyright'); echo ' ' . date('Y');?>
                     </div>
                 </div>
             </div>

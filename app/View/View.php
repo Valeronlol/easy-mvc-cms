@@ -27,16 +27,8 @@ class View
     }
 
     function _($phrase){
-        Lang::printPhraseTranslate( $phrase, $this->getLanguage() );
-    }
-
-    /**
-     * set language
-     * @return string
-     */
-    protected function getLanguage()
-    {
-        return $_COOKIE['lang'];
+        $lang = new Lang();
+        $lang->printPhraseTranslate( $phrase, $lang->getLanguage() );
     }
 
     /**

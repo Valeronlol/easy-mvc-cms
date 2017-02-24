@@ -1,7 +1,7 @@
 <?php if (! defined('ABSPATH')) die('permision denied');?>
 <div class="cont_wrap <?php echo 'has-sidebar-' . $side;?>">
     <div class="col-lg-12 text-center">
-        <h2>Registration form</h2>
+        <h2><?php $this->_('Registration form');?></h2>
         <hr class="star-primary">
     </div>
 
@@ -9,12 +9,12 @@
         <form name="register" id="register" method="POST">
             <div class="row control-group">
                 <div class="form-group col-xs-12 floating-label-form-group controls">
-                    <label>Login</label>
+                    <label><?php $this->_('Login');?></label>
                     <input
                             name="login"
                             type="text"
                             class="form-control"
-                            placeholder="Name"
+                            placeholder="<?php $this->_('Login');?>"
                             id="login"
                             required
                             value="<?php if( isset($_POST['login']) ) echo $_POST['login']; ?>"
@@ -26,12 +26,12 @@
             </div>
             <div class="row control-group">
                 <div class="form-group col-xs-12 floating-label-form-group controls">
-                    <label>First name</label>
+                    <label><?php $this->_('First name');?></label>
                     <input
                             name="f_name"
                             type="text"
                             class="form-control"
-                            placeholder="First name"
+                            placeholder="<?php $this->_('First name');?>"
                             id="f_name"
                             required
                             value="<?php if( isset($_POST['f_name']) ) echo $_POST['f_name']; ?>"
@@ -43,12 +43,12 @@
             </div>
             <div class="row control-group">
                 <div class="form-group col-xs-12 floating-label-form-group controls">
-                    <label>Last name</label>
+                    <label><?php $this->_('Last name');?></label>
                     <input
                             name="l_name"
                             type="text"
                             class="form-control"
-                            placeholder="Last name"
+                            placeholder="<?php $this->_('Last name');?>"
                             id="l_name"
                             required
                             value="<?php if( isset($_POST['l_name']) ) echo $_POST['l_name']; ?>"
@@ -60,12 +60,12 @@
             </div>
             <div class="row control-group">
                 <div class="form-group col-xs-12 floating-label-form-group controls">
-                    <label>Password</label>
+                    <label><?php $this->_('Password');?></label>
                     <input
                             name="password"
                             type="password"
                             class="form-control"
-                            placeholder="Password"
+                            placeholder="<?php $this->_('Password');?>"
                             id="password"
                             required
                             value="<?php if( isset($_POST['password']) ) echo $_POST['password']; ?>"
@@ -79,7 +79,7 @@
             <div id="success"></div>
             <div class="row">
                 <div class="form-group col-xs-12">
-                    <button name="submit" type="submit" class="btn btn-success btn-lg">Done</button>
+                    <button name="submit" type="submit" class="btn btn-success btn-lg"><?php $this->_('Done');?></button>
                 </div>
             </div>
         </form>
