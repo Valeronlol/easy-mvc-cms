@@ -27,9 +27,6 @@ class adminController extends Controller
      */
     function mainAdmin($params)
     {
-//        $this->setLanguage('ru');
-        Lang::_( 'TEST', $this->getLanguage() );
-
         $args = [
             'name' => 'vasya',
             'age' => 28,

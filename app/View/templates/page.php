@@ -6,6 +6,7 @@ include_once 'header.php';
 <section class="container">
     <div class="row">
 <?php
+$side = '';
     if ( !$config['sidebar'] ) {
         include_once $config['content_layout'] . '.php';
     }
@@ -13,8 +14,6 @@ include_once 'header.php';
         if ( isset($config['sidebar']) &&
             ( $config['sidebar'] == 'left' || $config['sidebar'] == 'right' ) ) {
             $side = $config['sidebar'];
-        } else {
-            $side = '';
         }
         include_once 'sidebar.php';
         include_once $config['content_layout'] . '.php';

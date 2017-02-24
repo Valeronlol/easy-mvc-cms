@@ -21,28 +21,9 @@ class Controller
     {
         $this->db = DB::getInstance();
         $this->auth = new Auth();
-        $this->setLanguage();
     }
 
-    /**
-     * get current language
-     * @param string $lang
-     */
-    protected function setLanguage($lang = 'ru')
-    {
-        setcookie('lang', $lang);
-    }
-
-    /**
-     * set language
-     * @return string
-     */
-    protected function getLanguage()
-    {
-        return $_COOKIE['lang'];
-    }
-
-	/**
+    	/**
 	 * Render some template
 	 *
 	 * @param array $args template configuration

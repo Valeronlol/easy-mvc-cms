@@ -35,6 +35,7 @@
         </div>
     </footer>
 <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+<script src="/app/assets/js/jquery.cookie.js"></script>
 <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="/app/assets/js/freelancer.min.js"></script>
 <script src="/app/assets/js/hideShowPassword.min.js"></script>

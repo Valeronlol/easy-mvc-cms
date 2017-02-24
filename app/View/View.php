@@ -1,6 +1,8 @@
 <?php
 namespace App\View;
 
+use App\Model\Lang;
+
 if (! defined('ABSPATH')) die('permision denied');
 /**
  * View class
@@ -22,6 +24,19 @@ class View
         $str = ob_get_contents();
         ob_end_clean();
         echo $str;
+    }
+
+    function _($phrase){
+        Lang::printPhraseTranslate( $phrase, $this->getLanguage() );
+    }
+
+    /**
+     * set language
+     * @return string
+     */
+    protected function getLanguage()
+    {
+        return $_COOKIE['lang'];
     }
 
     /**

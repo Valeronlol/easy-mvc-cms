@@ -14,7 +14,7 @@ class Lang
      * @param bool $echo is echo
      * @return mixed
      */
-    static function _( $phrase, $lang = 'ru', $echo = true )
+    static function printPhraseTranslate( $phrase, $lang = 'ru', $echo = true )
     {
         $ini = parse_ini_file( ABSPATH . 'config/lang/' . $lang.".ini");
 

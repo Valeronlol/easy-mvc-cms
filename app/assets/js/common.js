@@ -56,4 +56,12 @@ $( document ).ready(function() {
      */
     $('#password').hidePassword(true);
 
+    /**
+     * Cookie buttons
+     */
+    $('header .cookie').on('click', function () {
+        $.cookie("lang", $(this).attr('data-cookie'), { expires: 30 });
+        location.reload();
+    });
+
 });

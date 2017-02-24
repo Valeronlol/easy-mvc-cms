@@ -72,3 +72,13 @@ section .has-sidebar-left {
 .container {
     padding-top: 15px;
 }
+
+header {
+    position: relative;
+}
+
+header .eng_panel {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}

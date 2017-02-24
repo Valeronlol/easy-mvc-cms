@@ -15,4 +15,8 @@
 <body>
 <header class="navbar navbar-default navbar-fixed-top navbar-custom affix-top">
     <h3><?php echo SITE_TITLE;?></h3>
+    <div class="eng_panel">
+        <button type="button" class="btn btn-info cookie" data-cookie="ru">RU</button>
+        <button type="button" class="btn btn-info cookie" data-cookie="en">EN</button>
+    </div>
 </header>
