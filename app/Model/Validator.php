@@ -16,14 +16,14 @@ class Validator
     static function credentialsValidate ($credentilas)
     {
         $errors = [];
+        $lang = new Lang();
 
         if ( preg_match("/^[0-9a-zA-Z_]{6,}$/", $credentilas["login"] ) === 0) {
-            $errors['login'] = 'Login must be bigger that 6 chars and contain only digits, letters and underscore';
+            $errors['login'] = $lang->printPhraseTranslate('loginError', $lang->getLanguage(), false);
         }
 
         if ( preg_match("/^.*(?=.{6,})(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).*$/", $credentilas["password"]) === 0 ) {
-            $errors['password'] = 'Password must be at least 6 characters and
-             must contain at least one lower case letter,one upper case letter and one digit';
+            $errors['password'] = $lang->printPhraseTranslate('passwordError', $lang->getLanguage(), false);
         }
 
         if ( !empty($errors)){

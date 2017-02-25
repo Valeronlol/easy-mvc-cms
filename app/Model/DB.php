@@ -77,7 +77,7 @@ class DB
              password VARCHAR( 255 ) NOT NULL, 
              first_name VARCHAR( 100 ) NOT NULL,
              last_name VARCHAR( 100 ) NOT NULL,
-             last_login TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP );";
+             registration_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP );";
         $this->pdo->exec($sql);
     }
 

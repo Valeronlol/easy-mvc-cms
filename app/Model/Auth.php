@@ -32,7 +32,7 @@ class Auth
      */
     function checkCredentials($credentials)
     {
-        $sql = 'SELECT * FROM '.$this->table.' WHERE user = ?';
+        $sql = 'SELECT password FROM '.$this->table.' WHERE user = ?';
         $query = $this->pdo->prepare($sql);
         $query->execute(array( $credentials['login'] ));
         $fetched = $query->fetch();
