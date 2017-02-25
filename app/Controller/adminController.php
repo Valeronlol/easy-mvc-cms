@@ -28,19 +28,18 @@ class adminController extends Controller
      */
     function mainAdmin($params)
     {
+        if ( isset($_FILES['image']) ){
+            $uploadResult = $this->upload();
+        }
+
         $args = [
-            'name' => 'vasya',
-            'age' => 28,
             'config' => [
                 'custom_sidebar' => 'admin_sidebar',
                 'sidebar' => 'left',
                 'content_layout' => 'custom/admin_panel'
             ],
+            'uploadResult' => !empty($uploadResult) ? $uploadResult : null
         ];
-
-        if ( isset($_FILES['image']) ){
-            $this->upload();
-        }
 
         $this->render($args);
     }
@@ -51,14 +50,12 @@ class adminController extends Controller
     function upload()
     {
         $uploader = new Uploader($_FILES['image']);
-        $errors = $uploader->imageValidate();
+        $errors = $uploader->imageValidate(UPLOADS_FOLDER);
         if ( empty($errors) ){
-            if ( $uploadResult = $uploader->uploadImage(UPLOADS_FOLDER)) {
-                // TODO вывести статус успеха загрузки
-                return 'suxes';
+            if ( $uploadResult = $uploader->uploadImage(UPLOADS_FOLDER) ){
+                return $uploadResult;
             }
         }
-        // TODO вывести ошибки загрузки
         return $errors;
     }
 }

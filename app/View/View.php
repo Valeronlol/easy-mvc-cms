@@ -2,6 +2,7 @@
 namespace App\View;
 
 use App\Model\Lang;
+use App\Model\Uploader;
 
 if (! defined('ABSPATH')) die('permision denied');
 /**
@@ -18,6 +19,7 @@ class View
     function render( $args = [] )
     {
         extract( $this->setDefaultsLayout($args) );
+        $gallery = $this->createGalleryFromDir();
 
         ob_start();
         require 'templates/page.php';
@@ -55,6 +57,36 @@ class View
             $args['validation']['r_name'] = '';
         }
 
+
+
         return $args;
+    }
+
+    function createGalleryFromDir()
+    {
+        $folder_path = UPLOADS_FOLDER;
+        $num_files = glob($folder_path . "*.{JPG,jpg,gif,png,bmp}", GLOB_BRACE);
+        $folder = opendir($folder_path);
+        if($num_files > 0) {
+            ob_start();
+            while(false !== ( $file = readdir($folder)) ) {
+                $file_path = $folder_path . $file;
+                $extension = strtolower(pathinfo($file ,PATHINFO_EXTENSION));
+                if($extension=='jpg' || $extension =='png' || $extension == 'jpeg'){
+                    ?>
+                    <a href="<?php echo $file_path; ?>">
+                        <span class="bgc-img" style="background-image: url('<?php echo $file_path; ?>')"></span>
+                    </a>
+                    <?php
+                }
+            }
+            $str = ob_get_contents();
+            ob_end_clean();
+            closedir($folder);
+            return $str;
+        } else {
+            return "the folder was empty !";
+        }
+
     }
 }

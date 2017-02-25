@@ -8,4 +8,7 @@
     <div class="col-lg-8 col-lg-offset-2 text-center">
         <p><?php $this->_('lorem');?></p>
     </div>
+
+    <div class="col-lg-12"><?php echo  $gallery;?></div>
+
 </div>
