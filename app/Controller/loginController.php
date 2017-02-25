@@ -21,7 +21,7 @@ class loginController extends Controller
         $credentials = $this->getCredentials();
 
         if ( isset($_POST['submit']) ){
-            $validateResult = Validator::credentialsValidate($credentials);
+            $validateResult = Validator::credentialsValidate($credentials, false);
         } else {
             $validateResult = [];
         }

@@ -13,7 +13,7 @@ class Validator
      * @param $credentilas
      * @return array|bool array of errors or true
      */
-    static function credentialsValidate ($credentials)
+    static function credentialsValidate ($credentials, $checkUser = true)
     {
         $errors = [];
         $lang = new Lang();
@@ -26,7 +26,7 @@ class Validator
             $errors['password'] = $lang->printPhraseTranslate('passwordError', $lang->getLanguage(), false);
         }
 
-        if ( self::isUserExists($credentials) === true ) {
+        if ( $checkUser && self::isUserExists($credentials) === true ) {
             $lang = new Lang();
             $errors['login'] = $lang->printPhraseTranslate('userExists', $lang->getLanguage(), false);
         }
