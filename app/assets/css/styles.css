@@ -145,3 +145,7 @@ aside .label-info {
     display: block;
     text-align: center;
 }
+
+.error-template > div {
+    margin: 15px auto;
+}

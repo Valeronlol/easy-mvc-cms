@@ -4,10 +4,16 @@ namespace App\Controller;
 
 if (! defined('ABSPATH')) die('permision denied');
 
-class notFoundController
+class notFoundController extends Controller
 {
     function index( $params = [] )
     {
-        echo '404 not found';
+        $args = [
+            'config' => [
+                'content_layout' => 'custom/not_found'
+            ],
+        ];
+
+        $this->render($args);
     }
 }
