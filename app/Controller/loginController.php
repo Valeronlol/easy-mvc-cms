@@ -1,6 +1,7 @@
 <?php
 namespace App\Controller;
 
+use App\Model\Lang;
 use App\Model\Validator;
 use App\Model\Auth;
 
@@ -16,6 +17,7 @@ class loginController extends Controller
      */
     function index( $params = [] )
     {
+        $lang = new Lang();
         $credentials = $this->getCredentials();
 
         if ( isset($_POST['submit']) ){
@@ -28,6 +30,8 @@ class loginController extends Controller
             $auth = new Auth();
             if ( $auth->checkCredentials($credentials) ){
                 $this->sessionCredentials($credentials);
+            } else {
+                $validateResult = [ 'password' => $lang->printPhraseTranslate('wrongLogin', $lang->getLanguage(), false) ];
             }
         }
 

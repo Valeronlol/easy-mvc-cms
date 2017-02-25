@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Model\Lang;
 use App\Model\Validator;
 
 if (! defined('ABSPATH')) die('permision denied');
@@ -31,16 +32,16 @@ class registerController extends Controller
     private function register()
     {
         $credentials = [
-            'login' => $_POST['login'],
-            'f_name' => $_POST['f_name'],
-            'l_name' => $_POST['l_name'],
+            'login' => trim(strtolower($_POST['login'])),
+            'f_name' => trim($_POST['f_name']),
+            'l_name' => trim($_POST['l_name']),
             'password' => $_POST['password']
         ];
 
         $validateResult = Validator::credentialsValidate($credentials);
 
-        if ( $validateResult === true ){
-            if ($this->db->createUser($credentials)){
+        if ( $validateResult === true ) {
+            if ( $this->db->createUser($credentials) ){
                 $_POST = [];
                 header('Location: ' . '/');
                 exit;
@@ -57,4 +58,6 @@ class registerController extends Controller
         ];
         $this->render($args);
     }
+
+
 }
