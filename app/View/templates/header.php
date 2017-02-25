@@ -22,6 +22,7 @@
         </ul>
     </div>
     <div class="eng_panel">
+        <button type="button" class="btn btn-primary logout">Logout</button>
         <button type="button" class="btn btn-info cookie" data-cookie="ru">RU</button>
         <button type="button" class="btn btn-info cookie" data-cookie="en">EN</button>
     </div>

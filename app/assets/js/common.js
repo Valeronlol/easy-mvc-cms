@@ -84,4 +84,12 @@ $( document ).ready(function() {
         $('#upload-file-info').html($(this).val())
     });
 
+    /**
+     * Logout handler
+     */
+    $('header .logout').on('click', function () {
+        $.removeCookie('PHPSESSID');
+        location.reload();
+    });
+
 });
