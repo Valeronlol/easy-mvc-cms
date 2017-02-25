@@ -49,6 +49,9 @@ class Auth
      */
     function checkAuthorized()
     {
+        if ( !isset($_SESSION['credentials'])){
+            return false;
+        }
         session_start();
         $credentials = $_SESSION['credentials'];
         return $this->checkCredentials($credentials);
